@@ -9,6 +9,7 @@ import { AddEditEmpComponent } from './empresa/add-edit-emp/add-edit-emp.compone
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { ShowEplComponent } from './empleado/show-epl/show-epl.component';
 import { AddEditEplComponent } from './empleado/add-edit-epl/add-edit-epl.component';
+import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,10 @@ import { AddEditEplComponent } from './empleado/add-edit-epl/add-edit-epl.compon
     AddEditEmpComponent,
     EmpleadoComponent,
     ShowEplComponent,
-    AddEditEplComponent
+    AddEditEplComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [SharedService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
