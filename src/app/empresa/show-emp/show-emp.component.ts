@@ -40,6 +40,15 @@ export class ShowEmpComponent implements OnInit {
     this.ActivateAddEditEmpComp = true;
   }
 
+  deleteClick(item){
+    if (confirm(`Seguro de borrar la empresa ${ item.nombre }?`)) {
+      this.service.deleteEmpresa(item.empresaId).subscribe(data => {
+        alert(data.toString());
+        this.refreshEmpList();
+      });
+    }
+  }
+
   refreshEmpList(){
     this.service.getEmpresas().subscribe(data => {this.EmpresasList = data; });
   }
