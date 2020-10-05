@@ -20,12 +20,10 @@
 
     <label class="col-sm-2 col-form-label">Roles</label>
     <div class="col-sm-10">
-      <select class="form-control" [(ngModel)]="roles">
-        <option>--Seleccionar--</option>
-        <option *ngFor="let rolesName of rolesList">
-          {{rolesName.nombreRol}}
-        </option>
-      </select>
+      <div class="form-check" *ngFor="let rolesName of rolesList; let idx=index" >
+        <input class="form-check-input" type="checkbox" name="checkbox-list" [(ngModel)]="rolesName.isSelected" ngDefaultControl>
+        <label class="form-check-label">{{rolesName.nombreRol}}</label>
+      </div>
     </div>
 
     <label class="col-sm-2 col-form-label">Fecha de Ingreso</label>
