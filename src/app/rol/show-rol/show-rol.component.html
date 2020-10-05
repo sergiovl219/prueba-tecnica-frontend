@@ -1,7 +1,7 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
         (click)="addClick()" data-backdrop="static" data-keyboard="false">
-  Agregar Empleado
+  Agregar Rol
 </button>
 
 <!-- Modal -->
@@ -15,7 +15,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <app-add-edit-epl [epl]="epl" *ngIf="ActivateAddEditEplComp"></app-add-edit-epl>
+        <app-add-edit-rol [rol]="rol" *ngIf="ActivateAddEditRolComp"></app-add-edit-rol>
       </div>
     </div>
   </div>
@@ -25,21 +25,15 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Empleado ID</th>
-    <th>Nombre Empleado</th>
-    <th>Empresa</th>
-    <th>Roles</th>
-    <th>Fecha de Ingreso</th>
+    <th>Rol ID</th>
+    <th>Nombre Rol</th>
     <th>Opciones</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let dataItem of EmpleadosList">
-    <td>{{dataItem.empleadoId}}</td>
-    <td>{{dataItem.nombre}}</td>
-    <td>{{dataItem.empresa}}</td>
-    <td>{{dataItem.roles}}</td>
-    <td>{{dataItem.fechaIngreso}}</td>
+  <tr *ngFor="let dataItem of RolesList">
+    <td>{{dataItem.rolId}}</td>
+    <td>{{dataItem.nombreRol}}</td>
     <td>
       <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal"
               (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">

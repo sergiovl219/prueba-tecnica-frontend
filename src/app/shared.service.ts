@@ -50,4 +50,24 @@ readonly APIUrl = 'http://127.0.0.1:8000/';
   deleteEmpleado(val: any){
     return this.http.delete(this.APIUrl + 'empleado/' + val);
   }
+
+  getRoles(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + 'rol/');
+  }
+
+  getNombresRoles(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + 'rol/');
+  }
+
+  addRol(val: any){
+    return this.http.post(this.APIUrl + 'rol/', val);
+  }
+
+  updateRol(val: any){
+    return this.http.put(this.APIUrl + 'rol/', val);
+  }
+
+  deleteRol(val: any) {
+    return this.http.delete(this.APIUrl + 'rol/' + val);
+  }
 }

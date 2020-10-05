@@ -12,6 +12,9 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { ShowEplComponent } from './empleado/show-epl/show-epl.component';
 import { AddEditEplComponent } from './empleado/add-edit-epl/add-edit-epl.component';
 import { SharedService } from './shared.service';
+import { RolComponent } from './rol/rol.component';
+import { ShowRolComponent } from './rol/show-rol/show-rol.component';
+import { AddEditRolComponent } from './rol/add-edit-rol/add-edit-rol.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { SharedService } from './shared.service';
     EmpleadoComponent,
     ShowEplComponent,
     AddEditEplComponent,
+    RolComponent,
+    ShowRolComponent,
+    AddEditRolComponent,
   ],
   imports: [
     BrowserModule,
