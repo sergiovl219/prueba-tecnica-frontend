@@ -14,14 +14,17 @@ export class AddEditEplComponent implements OnInit {
   empleadoId: string;
   nombre: string;
   empresa: string;
+  roles: string;
   fechaIngreso: string;
   fotoId: string;
   fotoPath: string;
   empresasList: any = [];
+  rolesList: any = [];
 
 
   ngOnInit(): void {
     this.loadEmpresasList();
+    this.loadRolesList();
   }
 
   loadEmpresasList(){
@@ -30,6 +33,20 @@ export class AddEditEplComponent implements OnInit {
       this.empleadoId = this.epl.empleadoId;
       this.nombre = this.epl.nombre;
       this.empresa = this.epl.empresa;
+      this.roles = this.epl.roles;
+      this.fechaIngreso = this.epl.fechaIngreso;
+      this.fotoId = this.epl.fotoId;
+      this.fotoPath = this.service.APIUrl + 'empleado/media/' + this.fotoId;
+    });
+  }
+
+  loadRolesList(){
+    this.service.getNombresRoles().subscribe((data: any) => {
+      this.rolesList = data;
+      this.empleadoId = this.epl.empleadoId;
+      this.nombre = this.epl.nombre;
+      this.empresa = this.epl.empresa;
+      this.roles = this.epl.roles;
       this.fechaIngreso = this.epl.fechaIngreso;
       this.fotoId = this.epl.fotoId;
       this.fotoPath = this.service.APIUrl + 'empleado/media/' + this.fotoId;
@@ -41,6 +58,7 @@ export class AddEditEplComponent implements OnInit {
       empleadoId: this.empleadoId,
       nombre: this.nombre,
       empresa: this.empresa,
+      roles: this.roles,
       fechaIngreso: this.fechaIngreso,
       fotoId: this.fotoId,
     };
@@ -52,6 +70,7 @@ export class AddEditEplComponent implements OnInit {
       empleadoId: this.empleadoId,
       nombre: this.nombre,
       empresa: this.empresa,
+      roles: this.roles,
       fechaIngreso: this.fechaIngreso,
       fotoId: this.fotoId,
     };

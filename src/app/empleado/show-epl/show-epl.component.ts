@@ -25,6 +25,7 @@ export class ShowEplComponent implements OnInit {
       empleadoId: 0,
       nombre: '',
       empresa: '',
+      roles: '',
       fechaIngreso: '',
       fotoId: 'anonymous.png'
     };

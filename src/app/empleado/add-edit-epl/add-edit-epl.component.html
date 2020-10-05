@@ -18,6 +18,16 @@
       </select>
     </div>
 
+    <label class="col-sm-2 col-form-label">Roles</label>
+    <div class="col-sm-10">
+      <select class="form-control" [(ngModel)]="roles">
+        <option>--Seleccionar--</option>
+        <option *ngFor="let rolesName of rolesList">
+          {{rolesName.nombreRol}}
+        </option>
+      </select>
+    </div>
+
     <label class="col-sm-2 col-form-label">Fecha de Ingreso</label>
     <div class="col-sm-10">
       <input type="date"  [(ngModel)]="fechaIngreso">
