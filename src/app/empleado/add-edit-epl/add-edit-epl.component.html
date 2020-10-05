@@ -1,1 +1,40 @@
-<p>add-edit-epl works!</p>
+<div class="d-flex flex-row bd-highlight mb-3">
+
+  <div class="form-froup row" style="width: 60%;">
+
+    <label class="col-sm-2 col-form-label">Nombre Empleado</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="nombre"
+             placeholder="Enter Employee Name">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Empresa</label>
+    <div class="col-sm-10">
+      <select class="form-control" [(ngModel)]="empresa">
+        <option>--Seleccionar--</option>
+        <option *ngFor="let depName of empresasList">
+          {{depName.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <label class="col-sm-2 col-form-label">Fecha de Ingreso</label>
+    <div class="col-sm-10">
+      <input type="date"  [(ngModel)]="fechaIngreso">
+    </div>
+
+  </div>
+  <div class="ml-3 bd-highlight" style="width: 40%;">
+    <img [src]=fotoPath height="250px;" width="200px;">
+    <input type="file" (change)="uploadFoto($event)" class="mt-2"/>
+  </div>
+</div>
+
+
+<button (click)="addEmpleado()" *ngIf="epl.empleadoId==0" class="btn btn-primary">
+  Add
+</button>
+
+<button (click)="updateEmpleado()" *ngIf="epl.empleadoId!=0" class="btn btn-primary">
+  Update
+</button>

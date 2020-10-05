@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class SharedService {
 // TODO: Puede quedar en settigs? Para poderse importar si es STG, QA, PROD.
 readonly APIUrl = 'http://127.0.0.1:8000/';
-readonly PhotoUrl = 'http://127.0.0.1:8000/media/';
 
   constructor(private http: HttpClient) { }
 
@@ -41,7 +40,7 @@ readonly PhotoUrl = 'http://127.0.0.1:8000/media/';
   }
 
   addEmpleadoFoto(val: any){
-    return this.http.post(this.PhotoUrl + 'empleado/foto', val);
+    return this.http.post(this.APIUrl + 'empleado/foto', val);
   }
 
   updateEmpleado(val: any){

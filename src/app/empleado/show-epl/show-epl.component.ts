@@ -45,7 +45,7 @@ export class ShowEplComponent implements OnInit {
 
   deleteClick(item){
     if (confirm(`Seguro de borrar al empleado ${ item.nombre }?`)) {
-      this.service.deleteEmpleado(item.empresaId).subscribe(data => {
+      this.service.deleteEmpleado(item.empleadoId).subscribe(data => {
         alert(data.toString());
         this.refreshEplList();
       });
