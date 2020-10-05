@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-show-emp',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowEmpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: SharedService) { }
+
+  EmpresasList: any = [];
 
   ngOnInit(): void {
+    this.refreshEmpList();
+  }
+
+  refreshEmpList(){
+    this.service.getEmpresas().subscribe(data => {this.EmpresasList = data; });
   }
 
 }
