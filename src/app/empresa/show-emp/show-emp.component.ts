@@ -12,7 +12,25 @@ export class ShowEmpComponent implements OnInit {
 
   EmpresasList: any = [];
 
+  ModalTitle: string;
+  ActivateAddEditEmpComp: boolean = false;
+  emp: any;
+
   ngOnInit(): void {
+    this.refreshEmpList();
+  }
+
+  addClick(){
+    this.emp = {
+      empresaId: 0,
+      nombre: ''
+    };
+    this.ModalTitle = 'Agregar Empresa';
+    this.ActivateAddEditEmpComp = true;
+  }
+
+  closeClick(){
+    this.ActivateAddEditEmpComp = false;
     this.refreshEmpList();
   }
 
