@@ -13,7 +13,7 @@ export class ShowEmpComponent implements OnInit {
   EmpresasList: any = [];
 
   ModalTitle: string;
-  ActivateAddEditEmpComp: boolean = false;
+  ActivateAddEditEmpComp = false;
   emp: any;
 
   ngOnInit(): void {
@@ -32,6 +32,12 @@ export class ShowEmpComponent implements OnInit {
   closeClick(){
     this.ActivateAddEditEmpComp = false;
     this.refreshEmpList();
+  }
+
+  editClick(item){
+    this.emp = item;
+    this.ModalTitle = 'Editar Empresa';
+    this.ActivateAddEditEmpComp = true;
   }
 
   refreshEmpList(){
