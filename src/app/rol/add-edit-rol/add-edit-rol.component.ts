@@ -23,8 +23,8 @@ export class AddEditRolComponent implements OnInit {
   loadRolesList(){
     this.service.getNombresRoles().subscribe((data: any) => {
       this.rolesList = data;
-      this.rolId = this.rol.empleadoId;
-      this.nombreRol = this.rol.nombre;
+      this.rolId = this.rol.rolId;
+      this.nombreRol = this.rol.nombreRol;
     });
   }
 
@@ -41,6 +41,7 @@ export class AddEditRolComponent implements OnInit {
       rolId: this.rolId,
       nombreRol: this.nombreRol
     };
+    console.log(val);
     this.service.updateRol(val).subscribe(res => {alert(res.toString()); });
   }
 
